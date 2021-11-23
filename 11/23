@@ -1,0 +1,22 @@
+Error map
+git bash 무반응일 때 
+ctrl + z 또는 ctrl + c // 껐다 켜보기
+:p 
+
+syntax error near unexpected token `('    >> 파이썬 설치
+
+파이썬은 객체 지향이라는 것을 이해하기
+NoSQL 은 그냥 넣는다고 생각해보기 
+
+#주의 사항
+pwd
+cd Section3    (띄어쓰기!!)
+conda env list  (에서 conda 빼먹지 말기!) 
+스프린트 할 때 마다 가상환경 새로 만들고, 파이썬 설치 디폴트로 생각하지 말기
+conda activate ramram ( conda 빼먹지 말고, 'ramram'아님)
+
+git 배쉬에서 visual studio code 키는 코드
+code
+git clone한것도 같이 불러 오려면 code ./ (code 띄우고 ./) 
+
+깃헙에서 커밋하고 푸쉬하지 않으면 코드 자체를 보지 못한다 
