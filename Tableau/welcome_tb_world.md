@@ -41,5 +41,10 @@
 - 히스토그램 / 편집/ 구간차원
 - ![image](https://user-images.githubusercontent.com/89775352/154955887-c79bf007-c71c-4d5d-9fad-f215c472fe66.png)
 
-- 박스 플롯 
+- 스캐터플롯 , 다항식 추세선 
+-  ![image](https://user-images.githubusercontent.com/89775352/154960395-e36d19c5-5c8a-4de1-b465-8e1156072b83.png)
+- profit ratio가 눈에 보이는 것 처럼 뚝뚝 떨어진다. 
+
+- https://www.youtube.com/watch?v=EBMZ4nB1qj4
+
 
