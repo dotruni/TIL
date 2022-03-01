@@ -12,12 +12,25 @@ WHERE CustomerName < "B" AND/OR Country= 'Germany'
 AND/ OR 파이썬과 같은 조건 
 ```
 ### LIKE
+패턴, 비슷한 문자를 찾아줘라 
 ```sql
 WHERE country Like 'Br%'
 : country에서 Br로 시작하는 것들을 찾고 싶다. 
-% : 어떤 것이 들어가도 상관없다. 
+% : 어떤 것이 들어가도 상관없다. (와일드카드 라고도 함) 
 ex) 'Br%' BR 뒤에 어떤 것이 들어 있어도 상관없다 
     '%r%' 앞뒤로 어떤 것이 들어있어도 상관없는데 r이 있는 거 찾고 싶다. 
+    
+찾고자 하는게 확실할 때, 
+ex) Like 'Brazil' 하는 것보다 = 을 쓰는게 속도가 빠르다
+
+WHERE country LIKE 'B_____' : _ 5개 > Brazil 만 나온다. 
+_:몇개의 문자, 한글자 와일드 카드
+'백_이_여_타'
+
+\ (escape 문자 활용)
+WHERE discount LIKE '50\%'
+--mysql 기준 
+
 ```
 ### IN, BETWEEN, IS NULL
 ``` sql
