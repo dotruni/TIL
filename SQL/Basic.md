@@ -42,3 +42,37 @@ WHERE CustomerID BETWEEN 3 AND 5
 WHERE CustomerID IS NULL 
 결측치 있으면 보여줘~ 
 --NULL, NAN 
+```
+
+#### 문제 풀이 
+```sql
+SELECT CITY 
+FROM STATION 
+WHERE CITY LIKE 'a%'
+OR CITY LIKE'e%'
+OR CITY LIKE'i%'
+OR CITY LIKE'o%'
+OR CITY LIKE'u%'
+
+-> WHERE CITY LIKE 'a%' OR 'e%'OR ~ 이게 되는줄 알았다.
+하지만 안된다, 왜? : 문법이 LIKE를 다써줘야 하는 것 같아.. 보충하기 
+
+SELECT DISTINCT (중복 없이 뽑아주기) 
+
+Query the list of CITY names from STATION that do not start with vowels and do not end with vowels. 
+Your result cannot contain duplicates.
+
+SELECT DISTINCT CITY 
+FROM STATION 
+WHERE CITY NOT LIKE 'a%'
+AND CITY NOT LIKE'e%'
+AND CITY NOT LIKE'i%'
+AND CITY NOT LIKE'o%'
+AND CITY NOT LIKE'u%'
+AND CITY NOT LIKE '%a'
+AND CITY NOT LIKE'%e'
+AND CITY NOT LIKE'%i'
+AND CITY NOT LIKE'%o'
+AND CITY NOT LIKE'%u'
+
+-> 구글링해볼까 하다가 파이썬이랑 비슷한 논리겠지, NOT 써볼까? 했는데 맞았다! 유휴!   
