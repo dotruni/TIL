@@ -134,3 +134,51 @@ ORDER BY earnings DESC
 LIMIT 1 
 
 ```
+### CASE
+```sql
+
+SELECT CASE
+		WHEN categoryid=1 AND Sipplierid=1 THEN '음료'
+        	WHEN categoryid=2 THEN '조미료'
+        	ELSE '기타'
+       END AS categoryname
+FROM Products
+
+
+SELECT CASE
+	     WHEN CategoryID=1 THEN '음료'
+            WHEN CategoryID=2 THEN '소스'
+            ELSE '이외'
+	END AS new_category,AVG(price)            
+	,AVG(price)
+FROM PRODUCTS 
+GROUP BY new_category
+
+new_category	AVG(price)
+소스	       23.0625
+음료	       37.979166666666664
+이외	       28.11716981132075
+
+-- 파이썬 처럼 A=B=C 이렇게 불가능, AND로 묶어줘야한다.
+-- 파이썬 처럼 (IF) WHEN 뒤에는 아닌거 나옴 그러니까 쓴 것 처럼 정삼각형 아닌 조건들 
+-- 쓸 필요 없이 자동으로 정삼각형은 아니고->가 되니까 생략할 수 있음. 
+-- 그래서 CASE문 쓸 때는 WHEN 순서 중요
+
+1. Write a query identifying the type of each record in the TRIANGLES table using its three side lengths. 
+Output one of the following statements for each record in the table:
+
+Equilateral: It's a triangle with  sides of equal length.
+Isosceles: It's a triangle with  sides of equal length.
+Scalene: It's a triangle with  sides of differing lengths.
+Not A Triangle: The given values of A, B, and C don't form a triangle.
+
+
+SELECT CASE
+            WHEN A=B AND B=C AND A=C THEN 'Equilateral'
+            WHEN A+B <= C OR A+C <=B OR B+C<=A THEN 'Not A Triangle'
+            WHEN A=B OR B=C OR A=C THEN 'Isosceles'
+            ELSE 'Scalene' 
+        END
+FROM TRIANGLES    
+
+```
