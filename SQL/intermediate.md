@@ -119,8 +119,7 @@ HAVING avg_price >=100
 
 ```
 
-#### 문제풀이
-(그 전것 다 날라갔다..ㅠㅠ) 
+####  헷갈렸던 문제풀이
 ```sql
 
 1. We define an employee's total earnings to be their monthly salary x months worked, and the maximum total earnings 
