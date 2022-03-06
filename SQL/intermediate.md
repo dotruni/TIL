@@ -118,3 +118,20 @@ GROUP BY SupplierID, Categoryid
 HAVING avg_price >=100
 
 ```
+
+#### 문제풀이
+(그 전것 다 날라갔다..ㅠㅠ) 
+```sql
+
+1. We define an employee's total earnings to be their monthly salary x months worked, and the maximum total earnings 
+to be the maximum total earnings for any employee in the Employee table. Write a query to find the maximum total earnings 
+for all employees as well as the total number of employees who have maximum total earnings. Then print these values as  space-separated integers.
+
+SELECT salary * months AS earnings 
+    , COUNT(*)
+FROM EMPLOYEE
+GROUP BY earnings
+ORDER BY earnings DESC
+LIMIT 1 
+
+```
