@@ -181,4 +181,15 @@ SELECT CASE
         END
 FROM TRIANGLES    
 
+-- 데이터 피보팅 데이터를 옆으로 넓게 보는 것 
+
+SELECT AVG(CASE WHEN categoryid=1 THEN price  ELSE NULL END) AS category1_price -- 알리아스 위치 이해 
+	 , AVG(CASE WHEN categoryid=2 THEN price  ELSE NULL END) AS category2_price
+     , AVG(CASE WHEN categoryid=3 THEN price  ELSE NULL END) AS category3_price
+FROM Products
+
+OUTPUT: 
+category1_price 	category2_price	 category3_price
+37.979166666666664	23.0625	           25.16
+
 ```
