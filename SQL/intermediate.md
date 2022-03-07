@@ -193,6 +193,15 @@ category1_price 	category2_price	 category3_price
 37.979166666666664	23.0625	           25.16
 
 문제 풀이 
+LeetCode 1179. Reformat Department Table
+
+Write an SQL query to reformat the table such that there is a department id column and a revenue column for each month.
+
+Return the result table in any order.
+
+The query result format is in the following example.
+
+ 
 
 -- 피보팅 -- 콤마 붙이기 
 SELECT id
