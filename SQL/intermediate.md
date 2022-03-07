@@ -192,4 +192,26 @@ OUTPUT:
 category1_price 	category2_price	 category3_price
 37.979166666666664	23.0625	           25.16
 
+문제 풀이 
+
+-- 피보팅 -- 콤마 붙이기 
+SELECT id
+       ,SUM(CASE WHEN month="Jan" then revenue ELSE NULL END) AS Jan_Revenue
+       ,SUM(CASE WHEN month="Feb" then revenue ELSE NULL END) AS Feb_Revenue
+       ,SUM(CASE WHEN month="Mar" then revenue ELSE NULL END) AS Mar_Revenue 
+       ,SUM(CASE WHEN month="Apr" then revenue ELSE NULL END) AS Apr_Revenue 
+       ,SUM(CASE WHEN month='May' then revenue ELSE NULL END) AS May_Revenue 
+       ,SUM(CASE WHEN month="Jun" then revenue ELSE NULL END) AS Jun_Revenue 
+       ,SUM(CASE WHEN month="Jul" then revenue ELSE NULL END) AS Jul_Revenue 
+       ,SUM(CASE WHEN month= "Aug" then revenue ELSE NULL END) AS Aug_Revenue 
+       ,SUM(CASE WHEN month= "Sep" then revenue ELSE NULL END) AS Sep_Revenue
+       ,SUM(CASE WHEN month= "Oct" then revenue ELSE NULL END) AS Oct_Revenue 
+       ,SUM(CASE WHEN month= "Nov" then revenue ELSE NULL END) AS Nov_Revenue
+       ,SUM(CASE WHEN month= "Dec" then revenue ELSE NULL END) AS Dec_Revenue        
+FROM Department
+GROUP BY id   
+
+--GROUP BY는 집계함수와 함께!
+--'왜 SUM 을 써야하나요? 추가 설명: https://www.inflearn.com/questions/31602'
+
 ```
