@@ -1,0 +1,11 @@
+ValueError: tokens exceeds maximum length: 841 > 512
+
+NLP 도중.. BERT 는 토큰을 512개까지 받는다. 그러면 문장의 길이를 줄여줘야겠죠? 
+팀원분과 논의 후 이러한 함수를 작성하였다. 오래걸리긴 하지만 해결! 
+
+def feel_count(message) :
+    if len(message) < 512 :
+        return sentiment(message)
+    else :
+        return feel_count(message[:len(message)//2]) + feel_count(message[len(message)//2:])
+df["sentiment"]=df["message"].apply(lambda x: feel_count(x))
