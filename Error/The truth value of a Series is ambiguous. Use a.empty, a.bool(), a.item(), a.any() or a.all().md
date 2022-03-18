@@ -1,4 +1,4 @@
-#### ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()
+### ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()
 
 if 조건문 이상 없는것 같은데,,, 구글링 해보니 다들
 
