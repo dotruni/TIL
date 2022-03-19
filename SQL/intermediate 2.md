@@ -27,4 +27,19 @@ FROM Orders
 ![image](https://user-images.githubusercontent.com/89775352/158428446-c438e7e2-f449-4d63-9128-4ce21f7740e6.png)
 - 이 INNER JOIN 말고는 다 OUTER JOIN 이라고 생각하면 된다. 
 
-ex) 한번도 주문하지 않은 사람 
+
+Left : 왼쪽은 다 포함하고, 왼쪽이랑 겹치는 B 출력
+
+![image](https://user-images.githubusercontent.com/89775352/159126986-85571fa3-891f-488f-a29e-a129353712d4.png)
+
+```sql
+SELECT * 
+FROM Customers
+	LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+WHERE OrderID IS NULL
+
+RIGHT JOIN은 딱 이 반대 
+-- 보통 LEFT JOIN 기준으로 씀, 둘다 쓰면 헷갈리기 때문
+LEFT/RIGHT OUTER JOIN = LEFT/RIGHT JOIN
+똑같이 동작함. 
+```
