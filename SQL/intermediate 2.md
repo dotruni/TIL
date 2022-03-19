@@ -26,3 +26,5 @@ FROM Orders
 ### OUTER JOIN (LEFT,RIGHT)
 ![image](https://user-images.githubusercontent.com/89775352/158428446-c438e7e2-f449-4d63-9128-4ce21f7740e6.png)
 - 이 INNER JOIN 말고는 다 OUTER JOIN 이라고 생각하면 된다. 
+
+ex) 한번도 주문하지 않은 사람 
