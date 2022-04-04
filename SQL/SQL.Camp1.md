@@ -18,7 +18,7 @@ CASE WHEN 조건 1 THEN 조건 1이 참
 END 
 ```
 
-### FROM절 서브쿼리 
+#### FROM절 서브쿼리 
 
 ```sql
 SELECT *
@@ -40,4 +40,22 @@ FROM(
   ) AS daily
   
 -- 테이블 안에 테이블을 넣은 것 
--- AS는 생략 가능하지만 Alias 꼭 적어줘야 함 
+-- FROM절 에서 AS는 생략 가능하지만 Alias 꼭 적어줘야 함 
+```
+#### WITH 문 (간편)
+```sql
+WITH daily AS(
+  SELECT  day
+      , SUM(total_bill) sales
+  FROM tips
+  GROUP BY day
+  ),weekly AS(
+  쿼리
+  )
+  
+SELECT *
+FROM daily
+
+-- WITH문은 테이블 이름 붙여줌, 간결하게 만듬
+-- WITH 다시 안쓰고 weekly AS() 이렇게 써도 가능 
+```
