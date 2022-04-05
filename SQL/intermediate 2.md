@@ -72,4 +72,4 @@ DATE_SUB(기준날짜, INTERVAL 1 DAY)
 
 SELECT *
 FROM A AS today 
-        INNER JOIN A AS nextday ON DATEDATE_ADD(today.start_date,INTERVAL +1 DAY)=nextday.start_date
+        INNER JOIN A AS nextday ON DATE_ADD(today.start_date,INTERVAL +1 DAY)=nextday.start_date
