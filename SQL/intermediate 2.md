@@ -59,7 +59,9 @@ FROM CITY
 WHERE COUNTRY.CONTINENT= 'Asia';   
     
 -- ON 위치 주의 
-
+```
+### SELF JOIN
+```sql
 DATE_ADD(기준날짜, INTERVAL)
 DATE_ADD(NOW(), INTERVAL 1 SECOND)
 DATE_ADD(NOW(), INTERVAL 1 MINUTE)
@@ -73,3 +75,7 @@ DATE_SUB(기준날짜, INTERVAL 1 DAY)
 SELECT *
 FROM A AS today 
         INNER JOIN A AS nextday ON DATE_ADD(today.start_date,INTERVAL +1 DAY)=nextday.start_date
+
+-- 서브 쿼리, 셀프 조인 테이블 만들때 마다 칼럼 이름을 AS 로 다르게 지정해주는 게 좋다. 
+-- 그렇지 않으면 충돌이 잦다. 
+```
