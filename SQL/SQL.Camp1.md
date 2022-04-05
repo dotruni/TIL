@@ -13,7 +13,7 @@ GROUP BY day
 -- IF /CASE WHEN 차이
 IF(조건, 조건이 참, 조건이 거짓)
 CASE WHEN 조건 1 THEN 조건 1이 참
-    WHEN WHRJS 2 THEN 조건 2RK CKA
+    WHEN 조건 2 THEN 조건 2가 참 
     ELSE 그 외 
 END 
 ```
