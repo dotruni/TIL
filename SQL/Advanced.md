@@ -47,3 +47,16 @@ LEAD(컬럼) OVER (PARTITION BY 컬럼 ORDER BY 칼럼)
 LEAD(컬럼,칸수) OVER (PARTITION BY 컬럼 ORDER BY 칼럼)
 LEAD(컬럼,칸수,Default) OVER (PARTITION BY 컬럼 ORDER BY 칼럼)
 ``` 
+
+### 문제 풀이
+리트코드/ 180. Consecutive Numbers
+```sql
+SELECT DISTINCT l.Num AS con
+FROM(
+    SELECT Num
+          ,LEAD(NUM,1) OVER (ORDER BY id) AS next
+          ,LEAD(NUM,2) OVER (ORDER BY id) AS afternext    
+    FROM  Logs      
+)l
+WHERE l.Num=l.next=l.afternext  
+```
