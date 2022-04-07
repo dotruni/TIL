@@ -1,4 +1,24 @@
 - 아래 내용은 백문이불여일타_데이터리안_고급반을 수강하면서 정리한 내용입니다. 
+## DML (Data Manipulation Language)
+
+### Insert
+- 테이블 전체에 데이터 추가하는 방법
+```sql
+INSERT INTO 테이블명 VALUES(VALUE_LIST)
+EX) INSERT INTO Salary VALUES('1','A','250','2020-03-31')
+```
+- 특정 컬럼에만 값을 넣어 주는 방법 
+```sql
+INSERT INTO 테이블명(COLUMN_LIST) VALUES(VALUE_LIST)
+EX) INSERT INTO Salary(ID,Salary) VALUES('2','550')
+```
+
+```sql
+
+```
+
+
+
 
 ### WINDOW 함수
 ```sql
