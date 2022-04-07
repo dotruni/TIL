@@ -12,15 +12,32 @@ EX) INSERT INTO Salary VALUES('1','A','250','2020-03-31')
 INSERT INTO 테이블명(COLUMN_LIST) VALUES(VALUE_LIST)
 EX) INSERT INTO Salary(ID,Salary) VALUES('2','550')
 ```
-
+### UPDATE (수정)
+- 컬럼 전체에 데이터 업데이트 
 ```sql
+UPDATE 테이블명 SET 컬럼 = 값
+EX) UPDATE Salary SET Salary= Salary+100
+```
+= : 비교 연산자로 사용 했었는데, SET = : 여기서는 대입 연산자 
 
+- 지정 행의 값 갱신하기 
+```sql
+UPDATE 테이블명 SET 컬럼 = 값 WHERE 조건식 (행)
+EX) UPDATE Salary SET Salary= Salary+100 WHERE Id=2 
 ```
 
+### DELETE 
+- UPDATE 와 비슷
+- 테이블 전체 데이터 삭제하는 방법 
+```sql
+DELETE FROM 테이블명
+```
+- WHERE 조건절에 일치하는 모든 행 삭제 
+```sql
+DELETE FROM 테이블명 WHERE 조건식
+```
 
-
-
-### WINDOW 함수
+## WINDOW 함수
 ```sql
 함수(컬럼) OVER (PATITION BY 컬럼 ORDER BY 컬럼) 
 ```
