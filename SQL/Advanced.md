@@ -1,4 +1,38 @@
 - 아래 내용은 백문이불여일타_데이터리안_고급반을 수강하면서 정리한 내용입니다. 
+## Subquery 
+### from 절 서브쿼리
+- 각 주의 평균 발생 COUNT 
+```sql 
+SELECT dailly_stat.week
+    , AVG(daily_stats.incidents_daily)
+FROM( SELECT week
+            ,date
+            ,COUNT(incident_id) AS incidents_daily
+      FROM crimes
+      GROUP BY week,date
+      )daily_stats
+GROUP BY daily_stats.week       
+
+주의: 결측치가 있으면 평균에 오류가 날수가 있다. 
+```
+### WHERE 절 서브쿼리 
+```sql
+SELECT * 
+FROM crimes
+WHERE date=(SELECT MIN(date) FROM crimes)
+```
+- 서브쿼리의 결과물이 1개여야만 함.
+
+```sql
+SELECT*
+FROM crimes
+WHERE date IN (SELECT date FROM crimes ORDER BY date DESC LIMIT 5)
+```
+- 서브쿼리의 결과물이 1개이상 0 
+
+#### 문제 풀이
+```sql 
+
 ## DML (Data Manipulation Language)
 
 ### Insert
