@@ -1,4 +1,3 @@
-- 아래 내용은 백문이불여일타_데이터리안_고급반을 수강하면서 정리한 내용입니다. 
 ## Subquery 
 ### from 절 서브쿼리
 - 각 주의 평균 발생 COUNT 
@@ -96,6 +95,35 @@ SUM(kg) OVER (ORDER BY Line PARTITION BY Id) AS CumSum
 ``` 
  누적합이 ID 별로 연산된다. 
 - 다른 집계 함수 EX) AVG,COUNT,MIN 등도 위와 같이 하면 된다. 
+
+누적합 | 윈도우 함수 이외의 방법
+```sql
+-- JOIN 활용 
+SELECT el.Id
+      ,el.Name
+      ,el.kg
+      ,el.Line
+      ,SUM(E3.kg) AS CUMSUM 
+FROM Elevator e1 
+INNER JOIN Elevator e2
+        on e1.ID=e2.Id
+        and el.Line >= e2.Line
+GROUP BY 1,2,3,4
+
+--  SELECT절 서브쿼리 활용 
+SELECT el.id
+      ,el.Name
+      ,el.kg
+      ,el.Line
+      ,(SELECT SUM(e2.kg)
+          FROM Elevator e2
+        WHERE e1.id=e2.id
+          and e1.Line>=e2.Line) AS CumSum
+FROM Elevator e1
+```
+      
+
+```        
 #### 순위 정하기 
 - ROW_NUMBER(), RANK(), DENSE_RANK()
 - 셋 다 () 안에 아무런 인자도 들어가지 않음.
@@ -131,3 +159,4 @@ FROM(
 )l
 WHERE l.Num=l.next=l.afternext  
 ```
+- 아래 내용은 백문이불여일타_데이터리안_고급반을 수강하면서 정리한 내용입니다. 
