@@ -58,7 +58,12 @@ EX) UPDATE Salary SET Salary= Salary+100
 UPDATE 테이블명 SET 컬럼 = 값 WHERE 조건식 (행)
 EX) UPDATE Salary SET Salary= Salary+100 WHERE Id=2 
 ```
-
+문제풀이
+```sql
+[leetcode] 627. Swap Salary
+UPDATE salary 
+SET sex = CASE WHEN sex= 'f' THEN 'm' ELSE 'f' END
+```
 ### DELETE 
 - UPDATE 와 비슷
 - 테이블 전체 데이터 삭제하는 방법 
