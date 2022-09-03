@@ -91,4 +91,12 @@ t = pd.read_csv('https://raw.githubusercontent.com/pandas-dev/pandas/master/doc/
 
 t.groupby('Sex')['Age'].mean()
 # Sex 라는 컬럼을 기준으로 age의 평균을 구하는 것 
+
+t.groupby(['Pclass','Sex'])['Fare']
+# 여러개의 칼럼을 기준으로 값을 낼 때에는 () 안에 컬럼을 리스트 값으로 넣기 
+
+# 그룹 별 데이터 규모 파악하기 
+t.groupby('Pclass')['PassengerId'].count()
+
+t.info()
 ```
