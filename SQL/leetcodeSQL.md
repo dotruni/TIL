@@ -239,8 +239,3 @@ WHERE (product_id,year)IN (SELECT product_id
 
 이렇게 칼럼 끝을 클릭하면 같은 칼럼인 것들이 표시가 된다..! 안 뜨는 것이 있다면 그것이 오타! 
 
-[##_Image|kage@XFcTG/btsi2SbTZdJ/2iQ9P4qb9F69xkBAAhMgG1/img.png|CDM|1.3|{"originWidth":652,"originHeight":309,"style":"alignCenter","width":606,"height":287}_##]
-
-틀린 예시 
-
-[##_Image|kage@cImz9s/btsiX3ey9We/RrsbswCioXsWNkVAO3RS01/img.png|CDM|1.3|{"originWidth":675,"originHeight":279,"style":"alignCenter"}_##]
