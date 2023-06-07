@@ -198,3 +198,49 @@ group by num
 order by count(*), num desc 
 limit 1
 ```
+#### **_[(Medium)](https://leetcode.com/problems/not-boring-movies/?envType=study-plan-v2&envId=top-sql-50)_**
+
+[1045. Customers Who Bought All Products](https://leetcode.com/problems/customers-who-bought-all-products/?envType=study-plan-v2&envId=top-sql-50)
+
+1\. 정답 풀이 
+
+```
+SELECT customer_id
+FROM Customer 
+GROUP BY customer_id
+HAVING (SELECT COUNT(DISTINCT product_key) FROM Product)= COUNT(DISTINCT product_key)
+```
+
+2\. 오답 풀이 
+
+\--> 위 정답 풀이에서 DISTINCT를 뺌
+
+> There is no primary key for this table. It may contain duplicates. customer\_id is not NULL.
+
+\*이 부분을 유심히 보고 중복된 것들을 DISTINCT로 제외해주었어야 함.
+
+[1070. Product Sales Analysis III](https://leetcode.com/problems/product-sales-analysis-iii/description/?envType=study-plan-v2&envId=top-sql-50)
+
+```
+SELECT product_id
+      ,year AS first_year
+      ,quantity
+      ,price
+FROM Sales
+WHERE (product_id,year)IN (SELECT product_id
+                                ,MIN(year) 
+                          FROM Sales 
+                          GROUP BY product_id)
+```
+
+\* 역시.. 복잡하게 풀 필요 없이 WHERE 절로 서브쿼리를 포함해 주면 편하게 결과 값 나옴 여기서 WHERE = ( ) 이렇게 하면 row가 1행 밖에 지정이 안된다는 점 주의! 
+
+\* 항상 unknown column 이 에러 메세지에 뜨면 철자가 틀린 것이 있다는 것..! 내 눈에만 안보이는 오타..! 에러문 근처에 
+
+이렇게 칼럼 끝을 클릭하면 같은 칼럼인 것들이 표시가 된다..! 안 뜨는 것이 있다면 그것이 오타! 
+
+[##_Image|kage@XFcTG/btsi2SbTZdJ/2iQ9P4qb9F69xkBAAhMgG1/img.png|CDM|1.3|{"originWidth":652,"originHeight":309,"style":"alignCenter","width":606,"height":287}_##]
+
+틀린 예시 
+
+[##_Image|kage@cImz9s/btsiX3ey9We/RrsbswCioXsWNkVAO3RS01/img.png|CDM|1.3|{"originWidth":675,"originHeight":279,"style":"alignCenter"}_##]
